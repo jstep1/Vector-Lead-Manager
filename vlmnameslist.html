@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Vector Lead Manager</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" media="screen" href="vlm.css" />
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.9/firebase.js"></script>
+    
+</head>
+<body>
+        <div class="container">
+                <div class="row">
+                    <div class="col-sm-8">
+                    <h1>Vector Lead Manager</h1>
+                    </div>
+                    <div class="col-sm-4" style="padding: 10px"><a href="vlm.html">Home</a> | <a href="vlmnameslist.html">Names List</a> | <a href="vlmschedule.html">Schedule</a> | <a href="#">Logout</a></div>
+                    </div>
+                <br>
+            </div>
+
+            <div class="container">
+                <div class="row" id="nlitems">
+                    <div class="col-sm-2" id="nlname">
+                        <div ><u>Name</u></div>
+                    </div><br>
+                    <div class="col-sm-2" id="nlrelationship">
+                        <div ><u>Relationship</u></div>
+                    </div><br>
+                    <div class="col-sm-2" id="nlphone">
+                        <div><u>Phone</u></div>
+                    </div><br>
+                    <div class="col-sm-2" id="nlemail">
+                        <div ><u>Email</u></div>
+                    </div><br>
+                    <div class="col-sm-2" id="nlcity">
+                            <div><u>City</u></div>
+                        </div><br>
+                    <div class="col-sm-2" id="nlactivity">
+                            <div><u>Activity</u></div>
+                    </div>
+                </div>
+                </div>
+
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Initial Names Script</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div class="modal-body">
+                              <p>"Hey, is ________ there?"</p><br>
+                              <p>"Hey ___________ it's _______ can I come over and sell you some knives at 2 pm tomorow?"</p><br>
+                              <p>"Great, see you then!"</p><br>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-success">Schedule Demo</button>
+                              <button type="button" class="btn btn-danger" data-dismiss="modal">Not Interested</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                
+                
+            </div>
+            <script>
+                    // Initialize Firebase
+                    var config = {
+                      apiKey: "AIzaSyBx_ImbRp63cRFxlYqdjap2Rh7MhPAWHak",
+                      authDomain: "vector-lead-manager.firebaseapp.com",
+                      databaseURL: "https://vector-lead-manager.firebaseio.com",
+                      projectId: "vector-lead-manager",
+                      storageBucket: "vector-lead-manager.appspot.com",
+                      messagingSenderId: "903843549382"
+                    };
+                    firebase.initializeApp(config);
+                  
+                    var database = firebase.database();
+                    var namesRef = database.ref("names");
+                    var nl = 0;
+                    namesRef.on('value', function(snapshot) {
+                            snapshot.forEach(function(childSnapshot) {
+                            var childData = childSnapshot.val();
+                    $("#nlitems").append("<div class='container row'><div class='col-sm-2'>" + childData.name + "</div><div class='col-sm-2'>" + childData.relationship + "</div><div class='col-sm-2'>" + childData.phone + "</div><div class='col-sm-2'>" + childData.email + "</div><div class='col-sm-2'>" + childData.city + "</div><div class='col-sm-2'><button type='button' class='btn btn-success btn-sm' data-toggle='modal' data-target='#exampleModal'>Answer</button><button type='button' class='btn btn-warning btn-sm'>NH</button><button type='button' class='btn btn-danger btn-sm rmv' id='rmv " + childData.id + "'>x</button></div></div><br><br>");
+                    nl++;
+                    });
+    
+        });
+        
+        // document.getElementById("rmv").addEventListener("click", console.log(this));
+                    
+            </script>
+            
+<script src="vlm.js"></script>
+</body>
+</html>

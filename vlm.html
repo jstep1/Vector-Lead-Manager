@@ -3,12 +3,495 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
+    <title>Vector Lead Manager</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script src="main.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" media="screen" href="vlm.css" />
+    <script src="https://www.gstatic.com/firebasejs/5.5.9/firebase.js"></script>
+
+
 </head>
 <body>
-    <p>testestest</p>
+         
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8">
+            <h1>Vector Lead Manager</h1>
+            </div>
+            <div class="col-sm-4"><a href="vlm.html">Home</a> | <a href="vlmnameslist.html">Names List</a> | <a href="vlmschedule.html">Schedule</a> | <a href="#">Logout</a></div>
+            </div>
+        <br>
+    </div>
+
+    <div class="container" id="enternames">
+        <div class="row"><b>Add Contacts</b></div><br />
+        <div class="row">
+            <div class="input-group mb-3">
+                    <b>1) </b>
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="name">Name</span>
+                    </div> 
+                    <input type="text" class="form-control" aria-label="name" aria-describedby="name" id="n1">
+
+                    <select class="custom-select" id="r1">
+                            <option selected>Relationship</option>
+                            <option value="Family">Family</option>
+                            <option value="Friend">Friend</option>
+                            <option value="Recommendation">Recommendation</option>
+                    </select>
+
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="phone">Phone</span>
+                    </div>
+                    <input type="text" class="form-control" aria-label="phone" aria-describedby="phone" id="p1">
+
+                    <div class="input-group-prepend">
+                            <span class="input-group-text" id="phone">Email</span>
+                        </div>
+                        <input type="text" class="form-control" aria-label="email" aria-describedby="email" id="e1">
+
+                        <div class="input-group-prepend">
+                                <span class="input-group-text" id="city">City</span>
+                            </div>
+                            <input type="text" class="form-control" aria-label="phone" aria-describedby="city" id="c1">
+                         
+            </div>
+        </div>
+        <div class="row">
+                <div class="input-group mb-3">
+                        <b>2) </b>
+                        <div class="input-group-prepend">
+                          <span class="input-group-text" id="name">Name</span>
+                        </div> 
+                        <input type="text" class="form-control" aria-label="name" aria-describedby="name" id="n2">
+    
+                        <select class="custom-select" id="r2">
+                                <option selected>Relationship</option>
+                                <option value="Family">Family</option>
+                                <option value="Friend">Friend</option>
+                                <option value="Recommendation">Recommendation</option>
+                        </select>
+    
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="phone">Phone</span>
+                        </div>
+                        <input type="text" class="form-control" aria-label="phone" aria-describedby="phone" id="p2">
+    
+                        <div class="input-group-prepend">
+                                <span class="input-group-text" id="phone">Email</span>
+                            </div>
+                            <input type="text" class="form-control" aria-label="email" aria-describedby="email" id="e2">
+    
+                            <div class="input-group-prepend">
+                                    <span class="input-group-text" id="city">City</span>
+                                </div>
+                                <input type="text" class="form-control" aria-label="phone" aria-describedby="city" id="c2">
+                             
+                </div>
+            </div>
+            <div class="row">
+                    <div class="input-group mb-3">
+                            <b>3) </b>
+                            <div class="input-group-prepend">
+                              <span class="input-group-text" id="name">Name</span>
+                            </div> 
+                            <input type="text" class="form-control" aria-label="name" aria-describedby="name" id="n3">
+        
+                            <select class="custom-select" id="r3">
+                                    <option selected>Relationship</option>
+                                    <option value="Family">Family</option>
+                                    <option value="Friend">Friend</option>
+                                    <option value="Recommendation">Recommendation</option>
+                            </select>
+        
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="phone">Phone</span>
+                            </div>
+                            <input type="text" class="form-control" aria-label="phone" aria-describedby="phone" id="p3">
+        
+                            <div class="input-group-prepend">
+                                    <span class="input-group-text" id="phone">Email</span>
+                                </div>
+                                <input type="text" class="form-control" aria-label="email" aria-describedby="email" id="e3">
+        
+                                <div class="input-group-prepend">
+                                        <span class="input-group-text" id="city">City</span>
+                                    </div>
+                                    <input type="text" class="form-control" aria-label="phone" aria-describedby="city" id="c3">
+                                 
+                    </div>
+                </div>
+                <div class="row">
+                        <div class="input-group mb-3">
+                                <b>4) </b>
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text" id="name">Name</span>
+                                </div> 
+                                <input type="text" class="form-control" aria-label="name" aria-describedby="name" id="n4">
+            
+                                <select class="custom-select" id="r4">
+                                        <option selected>Relationship</option>
+                                        <option value="Family">Family</option>
+                                        <option value="Friend">Friend</option>
+                                        <option value="Recommendation">Recommendation</option>
+                                </select>
+            
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="phone">Phone</span>
+                                </div>
+                                <input type="text" class="form-control" aria-label="phone" aria-describedby="phone" id="p4">
+            
+                                <div class="input-group-prepend">
+                                        <span class="input-group-text" id="phone">Email</span>
+                                    </div>
+                                    <input type="text" class="form-control" aria-label="email" aria-describedby="email" id="e4">
+            
+                                    <div class="input-group-prepend">
+                                            <span class="input-group-text" id="city">City</span>
+                                        </div>
+                                        <input type="text" class="form-control" aria-label="phone" aria-describedby="city" id="c4">
+                                     
+                        </div>
+                    </div>
+                    <div class="row">
+                            <div class="input-group mb-3">
+                                    <b>5) </b>
+                                    <div class="input-group-prepend">
+                                      <span class="input-group-text" id="name">Name</span>
+                                    </div> 
+                                    <input type="text" class="form-control" aria-label="name" aria-describedby="name" id="n5">
+                
+                                    <select class="custom-select" id="r5">
+                                            <option selected>Relationship</option>
+                                            <option value="Family">Family</option>
+                                            <option value="Friend">Friend</option>
+                                            <option value="Recommendation">Recommendation</option>
+                                    </select>
+                
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="phone">Phone</span>
+                                    </div>
+                                    <input type="text" class="form-control" aria-label="phone" aria-describedby="phone" id="p5">
+                
+                                    <div class="input-group-prepend">
+                                            <span class="input-group-text" id="phone">Email</span>
+                                        </div>
+                                        <input type="text" class="form-control" aria-label="email" aria-describedby="email" id="e5">
+                
+                                        <div class="input-group-prepend">
+                                                <span class="input-group-text" id="city">City</span>
+                                            </div>
+                                            <input type="text" class="form-control" aria-label="phone" aria-describedby="city" id="c5">
+                                         
+                            </div>
+                        </div>
+                        <div class="row">
+                                <div class="input-group mb-3">
+                                        <b>6) </b>
+                                        <div class="input-group-prepend">
+                                          <span class="input-group-text" id="name">Name</span>
+                                        </div> 
+                                        <input type="text" class="form-control" aria-label="name" aria-describedby="name" id="n6">
+                    
+                                        <select class="custom-select" id="r6">
+                                                <option selected>Relationship</option>
+                                                <option value="Family">Family</option>
+                                                <option value="Friend">Friend</option>
+                                                <option value="Recommendation">Recommendation</option>
+                                        </select>
+                    
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text" id="phone">Phone</span>
+                                        </div>
+                                        <input type="text" class="form-control" aria-label="phone" aria-describedby="phone" id="p6">
+                    
+                                        <div class="input-group-prepend">
+                                                <span class="input-group-text" id="phone">Email</span>
+                                            </div>
+                                            <input type="text" class="form-control" aria-label="email" aria-describedby="email" id="e6">
+                    
+                                            <div class="input-group-prepend">
+                                                    <span class="input-group-text" id="city">City</span>
+                                                </div>
+                                                <input type="text" class="form-control" aria-label="phone" aria-describedby="city" id="c6">
+                                             
+                                </div>
+                            </div>
+                            <div class="row">
+                                    <div class="input-group mb-3">
+                                            <b>7) </b>
+                                            <div class="input-group-prepend">
+                                              <span class="input-group-text" id="name">Name</span>
+                                            </div> 
+                                            <input type="text" class="form-control" aria-label="name" aria-describedby="name" id="n7">
+                        
+                                            <select class="custom-select" id="r7">
+                                                    <option selected>Relationship</option>
+                                                    <option value="Family">Family</option>
+                                                    <option value="Friend">Friend</option>
+                                                    <option value="Recommendation">Recommendation</option>
+                                            </select>
+                        
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" id="phone">Phone</span>
+                                            </div>
+                                            <input type="text" class="form-control" aria-label="phone" aria-describedby="phone" id="p7">
+                        
+                                            <div class="input-group-prepend">
+                                                    <span class="input-group-text" id="phone">Email</span>
+                                                </div>
+                                                <input type="text" class="form-control" aria-label="email" aria-describedby="email" id="e7">
+                        
+                                                <div class="input-group-prepend">
+                                                        <span class="input-group-text" id="city">City</span>
+                                                    </div>
+                                                    <input type="text" class="form-control" aria-label="phone" aria-describedby="city" id="c7">
+                                                 
+                                    </div>
+                                </div>
+                                <div class="row">
+                                        <div class="input-group mb-3">
+                                                <b>8) </b>
+                                                <div class="input-group-prepend">
+                                                  <span class="input-group-text" id="name">Name</span>
+                                                </div> 
+                                                <input type="text" class="form-control" aria-label="name" aria-describedby="name" id="n8">
+                            
+                                                <select class="custom-select" id="r8">
+                                                        <option selected>Relationship</option>
+                                                        <option value="Family">Family</option>
+                                                        <option value="Friend">Friend</option>
+                                                        <option value="Recommendation">Recommendation</option>
+                                                </select>
+                            
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text" id="phone">Phone</span>
+                                                </div>
+                                                <input type="text" class="form-control" aria-label="phone" aria-describedby="phone" id="p8">
+                            
+                                                <div class="input-group-prepend">
+                                                        <span class="input-group-text" id="phone">Email</span>
+                                                    </div>
+                                                    <input type="text" class="form-control" aria-label="email" aria-describedby="email" id="e8">
+                            
+                                                    <div class="input-group-prepend">
+                                                            <span class="input-group-text" id="city">City</span>
+                                                        </div>
+                                                        <input type="text" class="form-control" aria-label="phone" aria-describedby="city" id="c8">
+                                                     
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                            <div class="input-group mb-3">
+                                                    <b>9) </b>
+                                                    <div class="input-group-prepend">
+                                                      <span class="input-group-text" id="name">Name</span>
+                                                    </div> 
+                                                    <input type="text" class="form-control" aria-label="name" aria-describedby="name" id="n9">
+                                
+                                                    <select class="custom-select" id="r9">
+                                                            <option selected>Relationship</option>
+                                                            <option value="Family">Family</option>
+                                                            <option value="Friend">Friend</option>
+                                                            <option value="Recommendation">Recommendation</option>
+                                                    </select>
+                                
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text" id="phone">Phone</span>
+                                                    </div>
+                                                    <input type="text" class="form-control" aria-label="phone" aria-describedby="phone" id="p9">
+                                
+                                                    <div class="input-group-prepend">
+                                                            <span class="input-group-text" id="phone">Email</span>
+                                                        </div>
+                                                        <input type="text" class="form-control" aria-label="email" aria-describedby="email" id="e9">
+                                
+                                                        <div class="input-group-prepend">
+                                                                <span class="input-group-text" id="city">City</span>
+                                                            </div>
+                                                            <input type="text" class="form-control" aria-label="phone" aria-describedby="city" id="c9">
+                                                         
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                                <div class="input-group mb-3">
+                                                        <b>10) </b>
+                                                        <div class="input-group-prepend">
+                                                          <span class="input-group-text" id="name">Name</span>
+                                                        </div> 
+                                                        <input type="text" class="form-control" aria-label="name" aria-describedby="name" id="n10">
+                                    
+                                                        <select class="custom-select" id="r10">
+                                                                <option selected>Relationship</option>
+                                                                <option value="Family">Family</option>
+                                                                <option value="Friend">Friend</option>
+                                                                <option value="Recommendation">Recommendation</option>
+                                                        </select>
+                                    
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text" id="phone">Phone</span>
+                                                        </div>
+                                                        <input type="text" class="form-control" aria-label="phone" aria-describedby="phone" id="p10">
+                                    
+                                                        <div class="input-group-prepend">
+                                                                <span class="input-group-text" id="phone">Email</span>
+                                                            </div>
+                                                            <input type="text" class="form-control" aria-label="email" aria-describedby="email" id="e10">
+                                    
+                                                            <div class="input-group-prepend">
+                                                                    <span class="input-group-text" id="city">City</span>
+                                                                </div>
+                                                                <input type="text" class="form-control" aria-label="phone" aria-describedby="city" id="c10">
+                                                             
+                                                </div>
+                                            </div>
+            
+            <div class="row">
+                <div class="col"></div>
+                <div class="col"><input class="btn btn-primary" type="submit" value="Submit All" style="width: 100%" data-toggle="modal" data-target="#exampleModal" id="sub1"></div>
+                <div class="col"></div>
+            </div>
+
+            
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBx_ImbRp63cRFxlYqdjap2Rh7MhPAWHak",
+    authDomain: "vector-lead-manager.firebaseapp.com",
+    databaseURL: "https://vector-lead-manager.firebaseio.com",
+    projectId: "vector-lead-manager",
+    storageBucket: "vector-lead-manager.appspot.com",
+    messagingSenderId: "903843549382"
+  };
+  firebase.initializeApp(config);
+
+  var database = firebase.database();
+  var namesRef = database.ref("names");
+  var nsubs = 0;
+  var id = new Date().getTime();
+
+  $("#sub1").click(function() {
+    if(document.getElementById("n1").value !== "") {
+    var newClientKey = database.ref().child('names').push().key;
+    database.ref('names/'+newClientKey+'/id').set(id + nsubs);
+    database.ref('names/'+newClientKey+'/name').set(document.getElementById("n1").value);
+    database.ref('names/'+newClientKey+'/relationship').set(document.getElementById("r1").value);
+    database.ref('names/'+newClientKey+'/city').set(document.getElementById("c1").value);
+    database.ref('names/'+newClientKey+'/phone').set(document.getElementById("p1").value);
+    database.ref('names/'+newClientKey+'/email').set(document.getElementById("e1").value);
+
+    nsubs++;
+    }
+    if(document.getElementById("n2").value !== "") {
+        var newClientKey = database.ref().child('names').push().key;
+        database.ref('names/'+newClientKey+'/id').set(id + nsubs);
+        database.ref('names/'+newClientKey+'/name').set(document.getElementById("n2").value);
+        database.ref('names/'+newClientKey+'/relationship').set(document.getElementById("r2").value);
+        database.ref('names/'+newClientKey+'/city').set(document.getElementById("c2").value);
+        database.ref('names/'+newClientKey+'/phone').set(document.getElementById("p2").value);
+        database.ref('names/'+newClientKey+'/email').set(document.getElementById("e2").value);
+    
+        nsubs++;
+    }
+    if(document.getElementById("n3").value !== "") {
+        var newClientKey = database.ref().child('names').push().key;
+        database.ref('names/'+newClientKey+'/name').set(document.getElementById("n3").value);
+        database.ref('names/'+newClientKey+'/relationship').set(document.getElementById("r3").value);
+        database.ref('names/'+newClientKey+'/city').set(document.getElementById("c3").value);
+        database.ref('names/'+newClientKey+'/phone').set(document.getElementById("p3").value);
+        database.ref('names/'+newClientKey+'/email').set(document.getElementById("e3").value);
+    
+        nsubs++;
+    }
+    if(document.getElementById("n4").value !== "") {
+        var newClientKey = database.ref().child('names').push().key;
+        database.ref('names/'+newClientKey+'/name').set(document.getElementById("n4").value);
+        database.ref('names/'+newClientKey+'/relationship').set(document.getElementById("r4").value);
+        database.ref('names/'+newClientKey+'/city').set(document.getElementById("c4").value);
+        database.ref('names/'+newClientKey+'/phone').set(document.getElementById("p4").value);
+        database.ref('names/'+newClientKey+'/email').set(document.getElementById("e4").value);
+    
+        nsubs++;
+    }
+    if(document.getElementById("n5").value !== "") {
+        var newClientKey = database.ref().child('names').push().key;
+        database.ref('names/'+newClientKey+'/name').set(document.getElementById("n5").value);
+        database.ref('names/'+newClientKey+'/relationship').set(document.getElementById("r5").value);
+        database.ref('names/'+newClientKey+'/city').set(document.getElementById("c5").value);
+        database.ref('names/'+newClientKey+'/phone').set(document.getElementById("p5").value);
+        database.ref('names/'+newClientKey+'/email').set(document.getElementById("e5").value);
+    
+        nsubs++;
+    }
+    if(document.getElementById("n6").value !== "") {
+        var newClientKey = database.ref().child('names').push().key;
+        database.ref('names/'+newClientKey+'/name').set(document.getElementById("n6").value);
+        database.ref('names/'+newClientKey+'/relationship').set(document.getElementById("r6").value);
+        database.ref('names/'+newClientKey+'/city').set(document.getElementById("c6").value);
+        database.ref('names/'+newClientKey+'/phone').set(document.getElementById("p6").value);
+        database.ref('names/'+newClientKey+'/email').set(document.getElementById("e6").value);
+    
+        nsubs++;
+    }
+    if(document.getElementById("n7").value !== "") {
+        var newClientKey = database.ref().child('names').push().key;
+        database.ref('names/'+newClientKey+'/name').set(document.getElementById("n7").value);
+        database.ref('names/'+newClientKey+'/relationship').set(document.getElementById("r7").value);
+        database.ref('names/'+newClientKey+'/city').set(document.getElementById("c7").value);
+        database.ref('names/'+newClientKey+'/phone').set(document.getElementById("p7").value);
+        database.ref('names/'+newClientKey+'/email').set(document.getElementById("e7").value);
+    
+        nsubs++;
+    }
+    if(document.getElementById("n8").value !== "") {
+        var newClientKey = database.ref().child('names').push().key;
+        database.ref('names/'+newClientKey+'/name').set(document.getElementById("n8").value);
+        database.ref('names/'+newClientKey+'/relationship').set(document.getElementById("r8").value);
+        database.ref('names/'+newClientKey+'/city').set(document.getElementById("c8").value);
+        database.ref('names/'+newClientKey+'/phone').set(document.getElementById("p8").value);
+        database.ref('names/'+newClientKey+'/email').set(document.getElementById("e8").value);
+    
+        nsubs++;
+    }
+    if(document.getElementById("n9").value !== "") {
+        var newClientKey = database.ref().child('names').push().key;
+        database.ref('names/'+newClientKey+'/name').set(document.getElementById("n9").value);
+        database.ref('names/'+newClientKey+'/relationship').set(document.getElementById("r9").value);
+        database.ref('names/'+newClientKey+'/city').set(document.getElementById("c9").value);
+        database.ref('names/'+newClientKey+'/phone').set(document.getElementById("p9").value);
+        database.ref('names/'+newClientKey+'/email').set(document.getElementById("e9").value);
+    
+        nsubs++;
+    }
+    if(document.getElementById("n10").value !== "") {
+        var newClientKey = database.ref().child('names').push().key;
+        database.ref('names/'+newClientKey+'/name').set(document.getElementById("n10").value);
+        database.ref('names/'+newClientKey+'/relationship').set(document.getElementById("r10").value);
+        database.ref('names/'+newClientKey+'/city').set(document.getElementById("c10").value);
+        database.ref('names/'+newClientKey+'/phone').set(document.getElementById("p10").value);
+        database.ref('names/'+newClientKey+'/email').set(document.getElementById("e10").value);
+    
+        nsubs++;
+    }
+
+    if(nsubs > 0) {
+    alert("You have successfully submitted " + nsubs + " names.");
+    location.reload()
+    }
+    else {
+    alert("Please enter a name.")
+    }
+    
+    })
+
+    
+    </script>
+
+
+    <script src="vlm.js"></script>
 </body>
 </html>
